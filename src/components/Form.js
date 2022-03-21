@@ -4,19 +4,11 @@ import "./Form.css";
 
 const Form = () => {
   const [form, setForm] = useState({});
-  const [show, setShow] = useState({
-    name: false,
-    role: false,
-  });
 
   const handleChangeInput = (e) => {
     setForm({
       ...form,
       name: e.target.value,
-    });
-    setShow({
-      ...show,
-      name: true,
     });
   };
 
@@ -25,20 +17,22 @@ const Form = () => {
       ...form,
       role: e.target.value,
     });
-    setShow({
-      ...show,
-      role: true,
-    });
   };
 
   const renderSpan = () => {
-    if (show.name || show.role) {
+    if (form.name && !form.role) {
+      return <Span value={"Nombre: " + form.name + " | Rol: "} />;
+    }
+    if (form.role && !form.name) {
+      return <Span value={"Nombre:  | Rol: " + form.role} />;
+    }
+    if (form.role && form.name) {
       return <Span value={"Nombre: " + form.name + " | Rol: " + form.role} />;
     }
   };
 
   return (
-    <form action="" id="form-nombre-role">
+    <form action="" id="form-nombre-role" onSubmit={(e) => e.preventDefault()}>
       <label htmlFor="input-form"> Nombre: </label>
       <input
         type="text"
