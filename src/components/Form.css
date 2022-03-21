@@ -1,0 +1,61 @@
+form {
+  width: 330px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgb(51, 51, 51);
+}
+
+form input,
+form select {
+  margin-bottom: 10px;
+}
+
+form label {
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+form input {
+  height: 25px;
+  width: 250px;
+  padding-left: 6px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px solid rgb(44, 90, 238);
+}
+
+form input:focus {
+  outline: 2px solid rgb(167, 230, 255);
+}
+
+form select {
+  width: 150px;
+  border-radius: 5px;
+  border: 2px solid rgb(44, 90, 238);
+}
+
+form select:focus {
+  outline: 2px solid rgb(167, 230, 255);
+}
+
+form span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+  height: 60px;
+  border-radius: 20px;
+  background-color: rgb(250, 250, 69);
+}
+
+form span h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+form span p {
+  margin: 0;
+}
